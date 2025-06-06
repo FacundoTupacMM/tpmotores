@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://do7owbhu1t22k" path="res://Recursos/Char_001.png" id="2_vt1rs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kh0y"]
+height = 24.0
 
 [sub_resource type="Animation" id="Animation_7xwpo"]
 resource_name = "Abajo"
@@ -111,6 +112,7 @@ script = ExtResource("2_0kh0y")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Personaje"]
+position = Vector2(0, 3)
 shape = SubResource("CapsuleShape2D_0kh0y")
 
 [node name="Sprite2D" type="Sprite2D" parent="Personaje"]
