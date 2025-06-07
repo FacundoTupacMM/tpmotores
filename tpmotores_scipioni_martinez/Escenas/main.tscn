@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8w0ulcgprl5a"]
+[gd_scene load_steps=22 format=3 uid="uid://b8w0ulcgprl5a"]
 
 [ext_resource type="Script" uid="uid://dg2lwdx1lv8rm" path="res://Scripts/main.gd" id="1_6lbni"]
 [ext_resource type="Script" uid="uid://8x5ofjfw1bfs" path="res://Scripts/personaje.gd" id="2_0kh0y"]
 [ext_resource type="Texture2D" uid="uid://do7owbhu1t22k" path="res://Recursos/Char_001.png" id="2_vt1rs"]
 [ext_resource type="Texture2D" uid="uid://cmpxfovp1rjlo" path="res://Recursos/Flag_animation.png" id="4_7xwpo"]
 [ext_resource type="Texture2D" uid="uid://c5tfbw4es7r0w" path="res://Recursos/Enemy.png" id="5_2ia52"]
+[ext_resource type="Script" uid="uid://dcnvw7jurg312" path="res://enemigo.gd" id="5_crgrh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0kh0y"]
 height = 24.0
@@ -210,7 +211,7 @@ script = ExtResource("1_6lbni")
 
 [node name="Personaje" type="CharacterBody2D" parent="."]
 texture_filter = 1
-position = Vector2(371, 137)
+position = Vector2(379, 193)
 script = ExtResource("2_0kh0y")
 metadata/_edit_group_ = true
 
@@ -248,7 +249,8 @@ libraries = {
 }
 
 [node name="Enemigo" type="CharacterBody2D" parent="."]
-position = Vector2(451, 140)
+position = Vector2(320, 319)
+script = ExtResource("5_crgrh")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo"]
