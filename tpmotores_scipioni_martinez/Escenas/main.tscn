@@ -16,3 +16,6 @@ position = Vector2(609, 515)
 
 [node name="Enemigo" parent="." instance=ExtResource("4_crgrh")]
 position = Vector2(821, 172)
+
+[connection signal="gana" from="Bandera" to="." method="_on_bandera_gana"]
+[connection signal="pierde" from="Bandera" to="." method="_on_bandera_pierde"]
