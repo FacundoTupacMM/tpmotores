@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://b1jrxiju7ngcv"]
 
-[ext_resource type="Script" uid="uid://dcnvw7jurg312" path="res://enemigo.gd" id="1_24lda"]
+[ext_resource type="Script" uid="uid://dcnvw7jurg312" path="res://Scripts/enemigo.gd" id="1_24lda"]
 [ext_resource type="Texture2D" uid="uid://c5tfbw4es7r0w" path="res://Recursos/Enemy.png" id="2_1hbjf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_crgrh"]

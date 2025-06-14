@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8w0ulcgprl5a"]
+[gd_scene load_steps=6 format=3 uid="uid://b8w0ulcgprl5a"]
 
 [ext_resource type="Script" uid="uid://dg2lwdx1lv8rm" path="res://Scripts/main.gd" id="1_6lbni"]
 [ext_resource type="PackedScene" uid="uid://bafv3syf5npmh" path="res://Escenas/personaje.tscn" id="2_7xwpo"]
 [ext_resource type="PackedScene" uid="uid://cvbgw70kue043" path="res://Escenas/bandera.tscn" id="3_2ia52"]
 [ext_resource type="PackedScene" uid="uid://b1jrxiju7ngcv" path="res://Escenas/enemigo.tscn" id="4_crgrh"]
+[ext_resource type="PackedScene" uid="uid://dg4ota6xi8asd" path="res://Escenas/menu.tscn" id="5_2ia52"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6lbni")
@@ -17,5 +18,9 @@ position = Vector2(609, 515)
 [node name="Enemigo" parent="." instance=ExtResource("4_crgrh")]
 position = Vector2(821, 172)
 
+[node name="Menu" parent="." instance=ExtResource("5_2ia52")]
+process_mode = 3
+
 [connection signal="gana" from="Bandera" to="." method="_on_bandera_gana"]
 [connection signal="pierde" from="Bandera" to="." method="_on_bandera_pierde"]
+[connection signal="jugar" from="Menu" to="." method="_on_menu_jugar"]

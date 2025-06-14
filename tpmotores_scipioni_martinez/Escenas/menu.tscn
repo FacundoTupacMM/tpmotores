@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bxqlk2ynicir5" path="res://Scripts/menu.gd" id="1_lnt83"]
 
 [node name="Menu" type="Node2D"]
-process_mode = 3
 script = ExtResource("1_lnt83")
 
 [node name="ModalJugar" type="ColorRect" parent="."]
@@ -11,10 +10,10 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Jugar" type="Button" parent="."]
-offset_left = 553.0
-offset_top = 262.0
-offset_right = 602.0
-offset_bottom = 293.0
+offset_left = 556.0
+offset_top = 206.0
+offset_right = 605.0
+offset_bottom = 237.0
 text = "Jugar"
 
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
