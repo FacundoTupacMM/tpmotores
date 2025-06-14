@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1jrxiju7ngcv"]
+
+[ext_resource type="Script" uid="uid://dcnvw7jurg312" path="res://enemigo.gd" id="1_24lda"]
+[ext_resource type="Texture2D" uid="uid://c5tfbw4es7r0w" path="res://Recursos/Enemy.png" id="2_1hbjf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_crgrh"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="Animation" id="Animation_l8mww"]
+resource_name = "Enemy_derecha"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_n3qho"]
+resource_name = "Enemy_derecha"
+length = 1.2
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_1md0r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b1m0k"]
+_data = {
+&"Enemy_derecha": SubResource("Animation_l8mww"),
+&"Enemy_izquierda": SubResource("Animation_n3qho"),
+&"RESET": SubResource("Animation_1md0r")
+}
+
+[node name="Enemigo" type="CharacterBody2D"]
+script = ExtResource("1_24lda")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_crgrh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_1hbjf")
+hframes = 6
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b1m0k")
+}
