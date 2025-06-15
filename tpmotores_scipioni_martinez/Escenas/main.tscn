@@ -24,3 +24,5 @@ process_mode = 3
 [connection signal="gana" from="Bandera" to="." method="_on_bandera_gana"]
 [connection signal="pierde" from="Bandera" to="." method="_on_bandera_pierde"]
 [connection signal="jugar" from="Menu" to="." method="_on_menu_jugar"]
+[connection signal="rejugar" from="Menu" to="." method="_on_menu_rejugar"]
+[connection signal="salir" from="Menu" to="." method="_on_menu_salir"]
