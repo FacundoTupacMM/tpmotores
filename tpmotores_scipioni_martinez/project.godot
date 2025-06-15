@@ -18,3 +18,4 @@ config/icon="res://Recursos/icon.svg"
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.39354, 0.224063, 0.420793, 1)
