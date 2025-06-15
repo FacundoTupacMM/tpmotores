@@ -10,10 +10,26 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Jugar" type="Button" parent="."]
-offset_left = 556.0
-offset_top = 206.0
-offset_right = 605.0
-offset_bottom = 237.0
+offset_left = 583.0
+offset_top = 239.0
+offset_right = 632.0
+offset_bottom = 270.0
 text = "Jugar"
 
+[node name="Salir" type="Button" parent="."]
+offset_left = 589.0
+offset_top = 355.0
+offset_right = 631.0
+offset_bottom = 386.0
+text = "Salir"
+
+[node name="Rejugar" type="Button" parent="."]
+offset_left = 553.0
+offset_top = 280.0
+offset_right = 668.0
+offset_bottom = 311.0
+text = "Volver a jugar"
+
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Rejugar" to="." method="_on_rejugar_pressed"]
