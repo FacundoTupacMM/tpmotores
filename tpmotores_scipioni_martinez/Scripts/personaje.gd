@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 var movimiento = Vector2()
 var velocidad = 3
+var soltar_tecla
 
 func _physics_process(delta):
+	soltar_tecla = (Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left") or 			Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_down"))
 	Mover()
 	pass
 
@@ -41,10 +43,7 @@ func Mover_Abajo():
 	pass
 
 func Parar():
-	if (Input.is_action_just_released("ui_right") or
-			Input.is_action_just_released("ui_left") or 
-			Input.is_action_just_released("ui_up") or 
-			Input.is_action_just_released("ui_down")):
+	if soltar_tecla:
 		movimiento.x = 0
 		movimiento.y = 0
 		$AnimationPlayer.stop()

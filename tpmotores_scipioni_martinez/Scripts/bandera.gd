@@ -6,6 +6,7 @@ signal pierde
 func _ready() -> void:
 	$AnimationPlayer.play("Bandera")
 	pass
+pass
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Personaje":
@@ -13,4 +14,4 @@ func _on_area_2d_body_entered(body):
 	else:
 		emit_signal("pierde")
 	pass
-	pass
+pass
