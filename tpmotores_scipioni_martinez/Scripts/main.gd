@@ -8,11 +8,13 @@ func _ready():
 		$Menu/Rejugar.visible = false
 		$Menu/Rejugar.disabled = true
 	pass
+pass
 	
 func _on_menu_jugar():
 	get_tree().paused = false
 	$Menu.visible = false
 	pass
+pass
 
 func _on_bandera_gana():
 	$Enemigo.queue_free()
@@ -25,6 +27,7 @@ func _on_bandera_gana():
 	Global.rejugar = true
 	get_tree().paused = true
 	pass
+pass
 
 func _on_bandera_pierde():
 	$Personaje.queue_free()
@@ -36,11 +39,14 @@ func _on_bandera_pierde():
 	Global.rejugar = true
 	get_tree().paused = true
 	pass
+pass
 
 func _on_menu_rejugar():
 	get_tree().reload_current_scene()
 	pass
+pass
 
 func _on_menu_salir():
 	get_tree().quit()
 	pass
+pass
