@@ -19,7 +19,6 @@ config/icon="res://Recursos/icon.svg"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
-AudioPlayer="*res://Escenas/audio_player.tscn"
 
 [rendering]
 
