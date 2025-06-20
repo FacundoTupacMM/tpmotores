@@ -1,6 +1,10 @@
 extends Node2D
 
+var musica_menu = preload("res://Sonidos/MenuMusic.mp3")
+var musica_battle = preload("res://Sonidos/BattleMusic.mp3")
+
 func _ready():
+	Reproducir_Musica_Menu()
 	if Global.rejugar:
 		_on_menu_jugar()
 	else:
@@ -9,10 +13,23 @@ func _ready():
 		$Menu/Rejugar.disabled = true
 	pass
 pass
+
+func Reproducir_Musica_Menu():
+	$Musica.stream = musica_menu
+	$Musica.play()
+	pass
+pass
+	
+func Reproducir_Musica_Battle():
+	$Musica.stream = musica_battle
+	$Musica.play()
+	pass
+pass
 	
 func _on_menu_jugar():
 	get_tree().paused = false
 	$Menu.visible = false
+	Reproducir_Musica_Battle()
 	pass
 pass
 
@@ -22,6 +39,7 @@ func _on_bandera_gana():
 	Mostrar_Menu_Para_Rejugar()
 	Global.rejugar = true
 	get_tree().paused = true
+	Reproducir_Musica_Menu()
 	pass
 pass
 
@@ -30,6 +48,7 @@ func _on_bandera_pierde():
 	Mostrar_Menu_Para_Rejugar()
 	Global.rejugar = true
 	get_tree().paused = true
+	Reproducir_Musica_Menu()
 	pass
 pass
 

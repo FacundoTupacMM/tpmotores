@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8w0ulcgprl5a"]
+[gd_scene load_steps=7 format=3 uid="uid://b8w0ulcgprl5a"]
 
 [ext_resource type="Script" uid="uid://dg2lwdx1lv8rm" path="res://Scripts/main.gd" id="1_6lbni"]
 [ext_resource type="PackedScene" uid="uid://bafv3syf5npmh" path="res://Escenas/personaje.tscn" id="2_7xwpo"]
 [ext_resource type="PackedScene" uid="uid://cvbgw70kue043" path="res://Escenas/bandera.tscn" id="3_2ia52"]
 [ext_resource type="PackedScene" uid="uid://b1jrxiju7ngcv" path="res://Escenas/enemigo.tscn" id="4_crgrh"]
 [ext_resource type="PackedScene" uid="uid://dg4ota6xi8asd" path="res://Escenas/menu.tscn" id="5_2ia52"]
+[ext_resource type="AudioStream" uid="uid://46xqginmfd0x" path="res://Sonidos/MenuMusic.mp3" id="6_crgrh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_6lbni")
@@ -23,6 +24,12 @@ scale = Vector2(3, 3)
 
 [node name="Menu" parent="." instance=ExtResource("5_2ia52")]
 process_mode = 3
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("6_crgrh")
+autoplay = true
+parameters/looping = true
 
 [connection signal="gana" from="Bandera" to="." method="_on_bandera_gana"]
 [connection signal="pierde" from="Bandera" to="." method="_on_bandera_pierde"]

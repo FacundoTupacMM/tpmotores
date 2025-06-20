@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var movimiento = Vector2()
-var velocidad = 2
+var velocidad = 1
 
 func _physics_process(_delta):
 	move_and_collide(movimiento)
