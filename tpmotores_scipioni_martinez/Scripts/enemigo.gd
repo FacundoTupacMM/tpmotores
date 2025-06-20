@@ -6,7 +6,20 @@ var velocidad = 2
 func _physics_process(delta):
 	move_and_collide(movimiento)
 	set_vector(get_node("../Bandera").global_position - global_position)
+	
+	Enemigo_derecha()
+	Enemigo_izquierda()
 	pass
+pass
+
+func Enemigo_derecha():
+	if movimiento.x > 0:
+		$AnimationPlayer.play("Enemy_derecha")
+pass
+
+func Enemigo_izquierda():
+	if movimiento.x < 0:
+		$AnimationPlayer.play("Enemy_izquierda")
 pass
 	
 func set_vector(vector):

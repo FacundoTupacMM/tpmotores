@@ -5,7 +5,7 @@ var velocidad = 3
 var soltar_tecla
 
 func _physics_process(delta):
-	soltar_tecla = (Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left") or 			Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_down"))
+	soltar_tecla = (Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_down"))
 	Mover()
 	pass
 pass

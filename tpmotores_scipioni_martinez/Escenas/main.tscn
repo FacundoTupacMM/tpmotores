@@ -10,13 +10,16 @@
 script = ExtResource("1_6lbni")
 
 [node name="Personaje" parent="." instance=ExtResource("2_7xwpo")]
-position = Vector2(390, 122)
+position = Vector2(99, 541)
+scale = Vector2(3, 3)
 
 [node name="Bandera" parent="." instance=ExtResource("3_2ia52")]
-position = Vector2(581, 519)
+position = Vector2(1082, 77)
+scale = Vector2(2, 2)
 
 [node name="Enemigo" parent="." instance=ExtResource("4_crgrh")]
-position = Vector2(775, 121)
+position = Vector2(105, 78)
+scale = Vector2(3, 3)
 
 [node name="Menu" parent="." instance=ExtResource("5_2ia52")]
 process_mode = 3
