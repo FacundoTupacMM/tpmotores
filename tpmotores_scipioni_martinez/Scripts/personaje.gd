@@ -4,7 +4,7 @@ var movimiento = Vector2()
 var velocidad = 3
 var soltar_tecla
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	soltar_tecla = (Input.is_action_just_released("ui_right") or Input.is_action_just_released("ui_left") or Input.is_action_just_released("ui_up") or Input.is_action_just_released("ui_down"))
 	Mover()
 	pass
