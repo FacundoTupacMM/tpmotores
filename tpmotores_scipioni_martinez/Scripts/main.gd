@@ -19,11 +19,7 @@ pass
 func _on_bandera_gana():
 	$Enemigo.queue_free()
 	$Bandera.queue_free()
-	$Menu.visible = true
-	$Menu/Jugar.visible = false
-	$Menu/Jugar.disabled = true
-	$Menu/Rejugar.visible = true
-	$Menu/Rejugar.disabled = false
+	Mostrar_Menu_Para_Rejugar()
 	Global.rejugar = true
 	get_tree().paused = true
 	pass
@@ -31,14 +27,18 @@ pass
 
 func _on_bandera_pierde():
 	$Personaje.queue_free()
+	Mostrar_Menu_Para_Rejugar()
+	Global.rejugar = true
+	get_tree().paused = true
+	pass
+pass
+
+func Mostrar_Menu_Para_Rejugar():
 	$Menu.visible = true
 	$Menu/Jugar.visible = false
 	$Menu/Jugar.disabled = true
 	$Menu/Rejugar.visible = true
 	$Menu/Rejugar.disabled = false
-	Global.rejugar = true
-	get_tree().paused = true
-	pass
 pass
 
 func _on_menu_rejugar():
