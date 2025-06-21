@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://3gikcemlmnqs"]
+
+[ext_resource type="Script" uid="uid://cugjeyt6qld48" path="res://Scripts/enemigo2.gd" id="1_lqvxn"]
+[ext_resource type="Texture2D" uid="uid://dq01kd1gdvfeo" path="res://Recursos/Enemy2.png" id="2_nu7e1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_air0v"]
+radius = 5.0
+
+[sub_resource type="Animation" id="Animation_lmmrh"]
+resource_name = "Enemy2_derecha"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_6p4jb"]
+resource_name = "Enemy2_izquierda"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_kwwna"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5w1jp"]
+_data = {
+&"Enemy2_derecha": SubResource("Animation_lmmrh"),
+&"Enemy2_izquierda": SubResource("Animation_6p4jb"),
+&"RESET": SubResource("Animation_kwwna")
+}
+
+[node name="Enemigo2" type="CharacterBody2D"]
+script = ExtResource("1_lqvxn")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_air0v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_nu7e1")
+hframes = 4
+vframes = 2
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5w1jp")
+}
