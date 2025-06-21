@@ -27,3 +27,18 @@ func set_vector(vector):
 	movimiento = vector.normalized() * velocidad
 	pass
 pass
+
+func Enemigo_intro_mover_izquierda():
+	$AnimationPlayer.play("Enemy_izquierda")
+	pass
+pass
+
+func Enemigo_intro_mover_derecha():
+	$AnimationPlayer.play("Enemy_derecha")
+	pass
+pass
+
+func Enemigo_intro_parar():
+	$AnimationPlayer.pause()
+	pass
+pass

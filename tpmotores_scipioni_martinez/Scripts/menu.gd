@@ -4,7 +4,14 @@ signal jugar
 signal salir
 signal rejugar
 
+func _ready():
+	$Personaje.set_physics_process(false)
+	$Enemigo.set_physics_process(false)
+	Reproducir_animacion_intro()
+pass
+
 func _on_jugar_pressed():
+	$AnimationIntro.stop()
 	emit_signal("jugar")
 	pass
 pass
@@ -18,3 +25,7 @@ func _on_rejugar_pressed():
 	emit_signal("rejugar")
 	pass
 pass
+
+func Reproducir_animacion_intro():
+	$AnimationIntro.stop()
+	$AnimationIntro.play("intro")

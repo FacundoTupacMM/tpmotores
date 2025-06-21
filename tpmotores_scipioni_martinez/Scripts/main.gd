@@ -53,6 +53,7 @@ func _on_bandera_pierde():
 pass
 
 func Mostrar_Menu_Para_Rejugar():
+	$Menu.Reproducir_animacion_intro()
 	$Menu.visible = true
 	$Menu/Jugar.visible = false
 	$Menu/Jugar.disabled = true

@@ -56,3 +56,13 @@ func Parar():
 		$AnimationPlayer.stop()
 	pass
 pass
+
+func PC_intro_mover_derecha():
+	$AnimationPlayer.play("Derecha")
+	pass
+pass
+
+func PC_intro_parar():
+	$AnimationPlayer.pause()
+	pass
+pass

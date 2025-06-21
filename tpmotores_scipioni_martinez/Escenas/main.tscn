@@ -1259,6 +1259,7 @@ scale = Vector2(3, 3)
 
 [node name="Menu" parent="." instance=ExtResource("5_2ia52")]
 process_mode = 3
+position = Vector2(4, -1)
 
 [node name="Fondo" type="TileMapLayer" parent="."]
 z_index = -2

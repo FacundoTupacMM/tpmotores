@@ -1,8 +1,215 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg4ota6xi8asd"]
+[gd_scene load_steps=9 format=3 uid="uid://dg4ota6xi8asd"]
 
 [ext_resource type="Script" uid="uid://bxqlk2ynicir5" path="res://Scripts/menu.gd" id="1_lnt83"]
 [ext_resource type="Texture2D" uid="uid://dfm8mku4atamw" path="res://Recursos/landscape.png" id="2_p25xy"]
 [ext_resource type="PackedScene" uid="uid://cvbgw70kue043" path="res://Escenas/bandera.tscn" id="3_17m5t"]
+[ext_resource type="PackedScene" uid="uid://bafv3syf5npmh" path="res://Escenas/personaje.tscn" id="4_cp3rd"]
+[ext_resource type="PackedScene" uid="uid://b1jrxiju7ngcv" path="res://Escenas/enemigo.tscn" id="5_kim34"]
+
+[sub_resource type="Animation" id="Animation_kim34"]
+resource_name = "intro"
+length = 25.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7, 7.7, 7.9, 8.1, 8.7, 8.9, 9.1, 9.2, 10.2, 10.9, 11.4, 11.45, 11.5, 11.55, 11.6, 12.25, 12.3, 12.4, 12.8, 13.4, 14, 14.6, 14.9, 15.4, 15.7, 15.9, 16.6, 16.7, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-80, 448), Vector2(-80, 448), Vector2(430.96, 448), Vector2(430.96, 448), Vector2(469.222, 382.138), Vector2(495.555, 409.655), Vector2(495.555, 409.655), Vector2(551.589, 377.606), Vector2(612.685, 409.17), Vector2(638.041, 448), Vector2(638.041, 448), Vector2(711, 448), Vector2(711, 448), Vector2(716, 448), Vector2(711, 448), Vector2(706, 448), Vector2(711, 448), Vector2(711, 448), Vector2(711, 453), Vector2(711, 448), Vector2(789, 275), Vector2(789, 275), Vector2(779, 481), Vector2(779, 481), Vector2(782, 480), Vector2(782, 480), Vector2(807.041, 489.723), Vector2(824.287, 511.44), Vector2(901.03, 701.735), Vector2(905, 714), Vector2(905, 714)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 12.4, 12.8, 13.4, 14, 14.6, 14.9, 15.4, 16.6, 16.7, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.488692, 0.488692, -3.10669, -3.10669, -2.91407, -2.9147, 1.89194, 1.88627, 1.8867]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2, 7.1, 10.1, 10.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"PC_intro_mover_derecha"
+}, {
+"args": [],
+"method": &"PC_intro_parar"
+}, {
+"args": [],
+"method": &"PC_intro_mover_derecha"
+}, {
+"args": [],
+"method": &"PC_intro_parar"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Bandera:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.35, 8.4, 8.7, 8.9, 9.1, 9.2, 10.2, 10.9, 11.4, 11.45, 11.5, 11.55, 11.6, 12.25, 12.3, 12.4, 12.8, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14, 14.6, 14.9, 15.4, 15.6, 15.7, 15.8, 15.9, 16, 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(570, 404), Vector2(570, 404), Vector2(438, 404), Vector2(438, 404), Vector2(490, 370), Vector2(555, 399), Vector2(580, 435), Vector2(580, 435), Vector2(652, 435), Vector2(652, 435), Vector2(657, 435), Vector2(652, 435), Vector2(647, 435), Vector2(652, 435), Vector2(652, 435), Vector2(652, 440), Vector2(652, 435), Vector2(739, 244), Vector2(739, 244), Vector2(724, 308), Vector2(741, 383), Vector2(761, 431), Vector2(800, 468), Vector2(822, 488), Vector2(834, 503), Vector2(834, 503), Vector2(832, 509), Vector2(832, 509), Vector2(819, 540), Vector2(806, 550), Vector2(789, 551), Vector2(780, 545), Vector2(779, 555), Vector2(788, 560), Vector2(806, 564), Vector2(832, 574), Vector2(864, 590), Vector2(900, 617), Vector2(933, 656), Vector2(938, 665), Vector2(938, 665)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Bandera:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.35, 8.4, 11.4, 11.45, 11.5, 11.55, 11.6, 12.25, 12.3, 12.4, 12.8, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14, 14.6, 14.9, 15.4, 15.6, 15.7, 15.8, 15.9, 16, 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.490438, 0.490438, -0.13439, -0.696389, -1.25838, -1.82096, -2.38354, -2.94612, -2.94612, -2.75762, -2.71834, -2.00916, -1.65457, -1.1938, -0.733038, -0.521853, -0.119554, 0.282746, 0.685038, 1.08734, 1.48964, 1.89194, 1.88627, 1.8867]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Bandera:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.35, 8.4, 11.4, 11.45, 11.5, 11.55, 11.6, 12.25, 12.3, 12.4, 12.8, 13.4, 13.5, 13.6, 13.7, 13.8, 13.9, 14, 14.6, 14.9, 15.4, 15.6, 15.7, 15.8, 15.9, 16, 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2, 2), Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1.005), Vector2(-1, 1.01), Vector2(-1, 1.015), Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1.005), Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1.008), Vector2(-1, 1.00667), Vector2(-1, 1.00533), Vector2(-1, 1.004), Vector2(-1, 1.00267), Vector2(-1, 1.00133), Vector2(-1, 1), Vector2(-1, 1), Vector2(-1, 1.008), Vector2(-0.957265, 1.02213), Vector2(-1, 1.007), Vector2(-1, 1), Vector2(-1, 1.003), Vector2(-1, 1.006), Vector2(-1, 1.00514), Vector2(-1, 1.00429), Vector2(-1, 1.00343), Vector2(-1, 1.00257), Vector2(-1, 1.00171), Vector2(-1, 1.00086), Vector2(-1, 1), Vector2(-1, 1.003), Vector2(-1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Enemigo:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 18, 20, 21.5, 23.5, 25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1200, 172), Vector2(1200, 172), Vector2(848, 172), Vector2(848, 172), Vector2(1200, 172), Vector2(1200, 172)]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Enemigo")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(17.9, 20, 21.5, 23.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"Enemigo_intro_mover_izquierda"
+}, {
+"args": [],
+"method": &"Enemigo_intro_parar"
+}, {
+"args": [],
+"method": &"Enemigo_intro_mover_derecha"
+}, {
+"args": [],
+"method": &"Enemigo_intro_parar"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_v8bcg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-80, 448)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.816814]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Bandera:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(437.44, 404)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Bandera:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Bandera:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Enemigo:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1200, 178)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bgts"]
+_data = {
+&"RESET": SubResource("Animation_v8bcg"),
+&"intro": SubResource("Animation_kim34")
+}
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_lnt83")
@@ -40,8 +247,23 @@ offset_bottom = 198.0
 text = "Volver a jugar"
 
 [node name="Bandera" parent="." instance=ExtResource("3_17m5t")]
-position = Vector2(568, 404)
-scale = Vector2(2, 2)
+position = Vector2(437.44, 404)
+scale = Vector2(-1, 1)
+
+[node name="Personaje" parent="." instance=ExtResource("4_cp3rd")]
+position = Vector2(-80, 448)
+rotation = -0.816814
+scale = Vector2(4, 4)
+
+[node name="Enemigo" parent="." instance=ExtResource("5_kim34")]
+position = Vector2(1200, 178)
+scale = Vector2(4, 4)
+
+[node name="AnimationIntro" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Personaje")
+libraries = {
+&"": SubResource("AnimationLibrary_1bgts")
+}
 
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
