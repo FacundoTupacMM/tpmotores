@@ -76,7 +76,6 @@ shape = SubResource("CircleShape2D_air0v")
 texture = ExtResource("2_nu7e1")
 hframes = 4
 vframes = 2
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
