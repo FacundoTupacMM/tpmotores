@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var movimiento = Vector2()
-var velocidad = 3
+var velocidad = 200
 var soltar_tecla
 
 func _physics_process(_delta):
@@ -16,7 +16,8 @@ func Mover():
 	Mover_Arriba()
 	Mover_Abajo()
 	Parar()
-	move_and_collide(movimiento)
+	velocity = movimiento
+	move_and_slide()
 	pass
 pass
 
