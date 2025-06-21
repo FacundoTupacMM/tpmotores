@@ -11,7 +11,6 @@ func _ready():
 pass
 
 func _on_jugar_pressed():
-	$AnimationIntro.stop()
 	emit_signal("jugar")
 	pass
 pass
