@@ -8,6 +8,7 @@ func _ready():
 	$Personaje.set_physics_process(false)
 	$Enemigo.set_physics_process(false)
 	Reproducir_animacion_intro()
+	pass
 pass
 
 func _on_jugar_pressed():
@@ -28,3 +29,5 @@ pass
 func Reproducir_animacion_intro():
 	$AnimationIntro.stop()
 	$AnimationIntro.play("intro")
+	pass
+pass
