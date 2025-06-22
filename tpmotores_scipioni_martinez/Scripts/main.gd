@@ -5,6 +5,7 @@ var musica_battle = preload("res://Sonidos/BattleMusic.mp3")
 
 func _ready():
 	Reproducir_Musica_Menu()
+	Ocultar_Mensaje_Final()
 	if Global.rejugar:
 		_on_menu_jugar()
 	else:
@@ -19,13 +20,19 @@ func Reproducir_Musica_Menu():
 	$Musica.play()
 	pass
 pass
-	
+
 func Reproducir_Musica_Battle():
 	$Musica.stream = musica_battle
 	$Musica.play()
 	pass
 pass
-	
+
+func Ocultar_Mensaje_Final():
+	$Menu/Ganaste.visible = false
+	$Menu/Perdiste.visible = false
+	pass
+pass
+
 func _on_menu_jugar():
 	get_tree().paused = false
 	$Menu.visible = false
@@ -37,6 +44,7 @@ func _on_bandera_gana():
 	$Enemigo.queue_free()
 	$Bandera.queue_free()
 	Mostrar_Menu_Para_Rejugar()
+	Mostrar_Ganaste()
 	Global.rejugar = true
 	get_tree().paused = true
 	Reproducir_Musica_Menu()
@@ -46,6 +54,7 @@ pass
 func _on_bandera_pierde():
 	$Personaje.queue_free()
 	Mostrar_Menu_Para_Rejugar()
+	Mostrar_Perdiste()
 	Global.rejugar = true
 	get_tree().paused = true
 	Reproducir_Musica_Menu()
@@ -59,6 +68,18 @@ func Mostrar_Menu_Para_Rejugar():
 	$Menu/Jugar.disabled = true
 	$Menu/Rejugar.visible = true
 	$Menu/Rejugar.disabled = false
+pass
+
+func Mostrar_Ganaste():
+	$Menu/Ganaste.visible = true
+	$Menu/Perdiste.visible = false
+	pass
+pass
+
+func Mostrar_Perdiste():
+	$Menu/Ganaste.visible = false
+	$Menu/Perdiste.visible = true
+	pass
 pass
 
 func _on_menu_rejugar():

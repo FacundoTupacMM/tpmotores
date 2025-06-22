@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dg4ota6xi8asd"]
+[gd_scene load_steps=12 format=3 uid="uid://dg4ota6xi8asd"]
 
 [ext_resource type="Script" uid="uid://bxqlk2ynicir5" path="res://Scripts/menu.gd" id="1_lnt83"]
 [ext_resource type="Texture2D" uid="uid://dfm8mku4atamw" path="res://Recursos/landscape.png" id="2_p25xy"]
@@ -212,6 +212,24 @@ _data = {
 &"intro": SubResource("Animation_kim34")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_v8bcg"]
+font_size = 35
+font_color = Color(0.8, 0.6968, 0.456, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bgts"]
+font_size = 35
+font_color = Color(0.99, 0.32934, 0.2277, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_offset = Vector2(3, 3)
+
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_lnt83")
 
@@ -271,6 +289,24 @@ root_node = NodePath("../Personaje")
 libraries = {
 &"": SubResource("AnimationLibrary_1bgts")
 }
+
+[node name="Ganaste" type="Label" parent="."]
+offset_left = 435.0
+offset_top = 48.0
+offset_right = 721.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("3_v8bcg")
+text = "GANASTE"
+label_settings = SubResource("LabelSettings_v8bcg")
+
+[node name="Perdiste" type="Label" parent="."]
+offset_left = 415.0
+offset_top = 48.0
+offset_right = 742.0
+offset_bottom = 113.0
+theme_override_fonts/font = ExtResource("3_v8bcg")
+text = "PERDISTE"
+label_settings = SubResource("LabelSettings_1bgts")
 
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
