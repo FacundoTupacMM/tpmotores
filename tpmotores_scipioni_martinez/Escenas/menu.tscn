@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dg4ota6xi8asd"]
+[gd_scene load_steps=13 format=3 uid="uid://dg4ota6xi8asd"]
 
 [ext_resource type="Script" uid="uid://bxqlk2ynicir5" path="res://Scripts/menu.gd" id="1_lnt83"]
 [ext_resource type="Texture2D" uid="uid://dfm8mku4atamw" path="res://Recursos/landscape.png" id="2_p25xy"]
@@ -6,6 +6,25 @@
 [ext_resource type="FontFile" uid="uid://cjmm6mc4mo5g8" path="res://Recursos/8-bit-pusab.ttf" id="3_v8bcg"]
 [ext_resource type="PackedScene" uid="uid://bafv3syf5npmh" path="res://Escenas/personaje.tscn" id="4_cp3rd"]
 [ext_resource type="PackedScene" uid="uid://b1jrxiju7ngcv" path="res://Escenas/enemigo.tscn" id="5_kim34"]
+[ext_resource type="Script" uid="uid://dqlfpidceso2i" path="res://Scripts/creditos.gd" id="7_1bgts"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8bcg"]
+font_size = 35
+font_color = Color(0.8, 0.6968, 0.456, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bgts"]
+font_size = 35
+font_color = Color(0.99, 0.32934, 0.2277, 1)
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.321569)
+shadow_offset = Vector2(3, 3)
 
 [sub_resource type="Animation" id="Animation_v8bcg"]
 length = 0.001
@@ -212,24 +231,6 @@ _data = {
 &"intro": SubResource("Animation_kim34")
 }
 
-[sub_resource type="LabelSettings" id="LabelSettings_v8bcg"]
-font_size = 35
-font_color = Color(0.8, 0.6968, 0.456, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 5
-shadow_color = Color(0, 0, 0, 0.321569)
-shadow_offset = Vector2(3, 3)
-
-[sub_resource type="LabelSettings" id="LabelSettings_1bgts"]
-font_size = 35
-font_color = Color(0.99, 0.32934, 0.2277, 1)
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 5
-shadow_color = Color(0, 0, 0, 0.321569)
-shadow_offset = Vector2(3, 3)
-
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_lnt83")
 
@@ -271,24 +272,24 @@ theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_v8bcg")
 text = "Volver a jugar"
 
-[node name="Bandera" parent="." instance=ExtResource("3_17m5t")]
-position = Vector2(437.44, 404)
-scale = Vector2(-1, 1)
-
-[node name="Personaje" parent="." instance=ExtResource("4_cp3rd")]
-position = Vector2(-80, 448)
-rotation = -0.816814
-scale = Vector2(4, 4)
-
-[node name="Enemigo" parent="." instance=ExtResource("5_kim34")]
-position = Vector2(1200, 178)
-scale = Vector2(4, 4)
-
-[node name="AnimationIntro" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Personaje")
-libraries = {
-&"": SubResource("AnimationLibrary_1bgts")
-}
+[node name="Creditos" type="Button" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1040.0
+offset_top = 605.0
+offset_right = 1136.0
+offset_bottom = 632.0
+grow_horizontal = 0
+grow_vertical = 0
+pivot_offset = Vector2(96, 27)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_v8bcg")
+theme_override_font_sizes/font_size = 10
+text = "Creditos"
+script = ExtResource("7_1bgts")
 
 [node name="Ganaste" type="Label" parent="."]
 offset_left = 435.0
@@ -308,6 +309,27 @@ theme_override_fonts/font = ExtResource("3_v8bcg")
 text = "PERDISTE"
 label_settings = SubResource("LabelSettings_1bgts")
 
+[node name="Bandera" parent="." instance=ExtResource("3_17m5t")]
+position = Vector2(437.44, 404)
+scale = Vector2(-1, 1)
+
+[node name="Personaje" parent="." instance=ExtResource("4_cp3rd")]
+position = Vector2(-80, 448)
+rotation = -0.816814
+scale = Vector2(4, 4)
+
+[node name="Enemigo" parent="." instance=ExtResource("5_kim34")]
+position = Vector2(1200, 178)
+scale = Vector2(4, 4)
+
+[node name="AnimationIntro" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Personaje")
+libraries = {
+&"": SubResource("AnimationLibrary_1bgts")
+}
+
 [connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]
 [connection signal="pressed" from="Rejugar" to="." method="_on_rejugar_pressed"]
+[connection signal="mouse_entered" from="Creditos" to="Creditos" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Creditos" to="Creditos" method="_on_mouse_exited"]
