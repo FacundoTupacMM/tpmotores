@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dg4ota6xi8asd"]
+[gd_scene load_steps=10 format=3 uid="uid://dg4ota6xi8asd"]
 
 [ext_resource type="Script" uid="uid://bxqlk2ynicir5" path="res://Scripts/menu.gd" id="1_lnt83"]
 [ext_resource type="Texture2D" uid="uid://dfm8mku4atamw" path="res://Recursos/landscape.png" id="2_p25xy"]
 [ext_resource type="PackedScene" uid="uid://cvbgw70kue043" path="res://Escenas/bandera.tscn" id="3_17m5t"]
+[ext_resource type="FontFile" uid="uid://cjmm6mc4mo5g8" path="res://Recursos/8-bit-pusab.ttf" id="3_v8bcg"]
 [ext_resource type="PackedScene" uid="uid://bafv3syf5npmh" path="res://Escenas/personaje.tscn" id="4_cp3rd"]
 [ext_resource type="PackedScene" uid="uid://b1jrxiju7ngcv" path="res://Escenas/enemigo.tscn" id="5_kim34"]
 
@@ -226,24 +227,30 @@ scale = Vector2(1.885, 1.885)
 texture = ExtResource("2_p25xy")
 
 [node name="Jugar" type="Button" parent="."]
-offset_left = 537.0
+offset_left = 464.0
 offset_top = 136.0
-offset_right = 629.0
+offset_right = 688.0
 offset_bottom = 198.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_v8bcg")
 text = "Jugar"
 
 [node name="Salir" type="Button" parent="."]
-offset_left = 537.0
-offset_top = 238.0
-offset_right = 629.0
-offset_bottom = 300.0
+offset_left = 464.0
+offset_top = 232.0
+offset_right = 688.0
+offset_bottom = 294.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_v8bcg")
 text = "Salir"
 
 [node name="Rejugar" type="Button" parent="."]
-offset_left = 505.0
+offset_left = 464.0
 offset_top = 136.0
-offset_right = 661.0
+offset_right = 688.0
 offset_bottom = 198.0
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_v8bcg")
 text = "Volver a jugar"
 
 [node name="Bandera" parent="." instance=ExtResource("3_17m5t")]

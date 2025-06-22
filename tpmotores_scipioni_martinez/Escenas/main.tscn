@@ -1239,6 +1239,7 @@ position = Vector2(1042, 102.5)
 scale = Vector2(1.73333, 1.61667)
 
 [node name="Enemigo" parent="." instance=ExtResource("4_crgrh")]
+z_index = -1
 position = Vector2(103, 114)
 scale = Vector2(3, 3)
 
