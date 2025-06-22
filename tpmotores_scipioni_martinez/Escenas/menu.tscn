@@ -285,6 +285,7 @@ offset_bottom = 632.0
 grow_horizontal = 0
 grow_vertical = 0
 pivot_offset = Vector2(96, 27)
+focus_mode = 0
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("3_v8bcg")
 theme_override_font_sizes/font_size = 10
