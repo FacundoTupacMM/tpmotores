@@ -12,7 +12,6 @@ func _ready():
 pass
 
 func _on_jugar_pressed():
-	$AnimationIntro.stop()
 	emit_signal("jugar")
 	pass
 pass
@@ -28,7 +27,11 @@ func _on_rejugar_pressed():
 pass
 
 func Reproducir_animacion_intro():
-	$AnimationIntro.stop()
 	$AnimationIntro.play("intro")
+	pass
+pass
+
+func Detener_animacion_intro():
+	$AnimationIntro.stop()
 	pass
 pass

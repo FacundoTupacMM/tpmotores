@@ -34,6 +34,7 @@ func Ocultar_Mensaje_Final():
 pass
 
 func _on_menu_jugar():
+	$Menu.Detener_animacion_intro()
 	get_tree().paused = false
 	$Menu.visible = false
 	Reproducir_Musica_Battle()
