@@ -23,7 +23,6 @@ func _on_salir_pressed():
 pass
 
 func _on_rejugar_pressed():
-	$AnimationIntro.stop()
 	emit_signal("rejugar")
 	pass
 pass
