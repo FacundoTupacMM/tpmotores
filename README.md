@@ -1,2 +1,5 @@
 # TP MOTORES
- TP Motores - Scipioni Martinez
+ TP Motores
+  Scipioni, Rodrigo
+  Martinez, Facundo Túpac
+  Villar, Natalia
